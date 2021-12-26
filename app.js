@@ -18,10 +18,12 @@ const listOfNames = [
 
 const returnInitials = (firstName,lastName) => firstName.charAt(0)+lastName.charAt(0);
 
-function displayAllInitials(returnInitials){
+function displayAllInitials(func){
     return listOfNames.map(function(obj){
-        return obj.firstName.charAt(0)+obj.lastName.charAt(0);
+        return func(obj.firstName,obj.lastName);
     });
+
+    returnInitials();
 }
 
 const listOfInitials = displayAllInitials(returnInitials);
