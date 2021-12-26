@@ -15,18 +15,14 @@ const listOfNames = [
      lastName: 'Bahri'
     }
 ];
-
 const returnInitials = (firstName,lastName) => firstName.charAt(0)+lastName.charAt(0);
 
-function displayAllInitials(func){
+function listAllInitials(returnInitials){
     return listOfNames.map(function(obj){
-        return func(obj.firstName,obj.lastName);
+        return returnInitials(obj.firstName,obj.lastName);
     });
-
-    returnInitials();
 }
-
-const listOfInitials = displayAllInitials(returnInitials);
+const listOfInitials = listAllInitials(returnInitials);
 
 listOfInitials.forEach(function(el){
     console.log(el);
